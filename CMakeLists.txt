@@ -20,8 +20,6 @@ find_package(catkin REQUIRED
 ## catkin specific configuration ##
 ###################################
 catkin_package(
-  INCLUDE_DIRS
-    include
   CATKIN_DEPENDS
     roscpp
     std_msgs
@@ -31,7 +29,6 @@ catkin_package(
 ## Build ##
 ###########
 include_directories(
-  include
   ${catkin_INCLUDE_DIRS}
 )
 
