@@ -1,0 +1,22 @@
+<launch>
+
+<!-- <rosparam command="load" file="$(find test_package)/config/params.yaml" />
+<node name="hello" pkg="test_package" type="hello_world" output="screen"/> -->
+
+<node name="hello" pkg="test_package" type="hello_world" output="screen">
+    <!-- We can load parameters from a launch file -->
+    <rosparam command="load" file="$(find test_package)/config/params_in_node.yaml" />
+    <!-- We can also just add the parameter explicitly here -->
+    <!-- <param name="input_topic" value="single_param_topic"/> -->
+</node>
+
+<!-- Namespaces can be applied to a single node -->
+<!-- <node ns="namespace" name="hello" pkg="test_package" type="hello_world" output="screen"/> -->
+
+<!-- Namespaces can also be applied to a group -->
+<!-- <group ns="namespace_group">
+    <node name="hello" pkg="test_package" type="hello_world" output="screen"/>
+    <node name="hello_too" pkg="test_package" type="hello_world" output="screen"/>
+</group> -->
+
+</launch>

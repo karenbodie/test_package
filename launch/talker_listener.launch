@@ -1,0 +1,8 @@
+<launch>
+
+<!-- Try changing one of talker/listener to a private nodehandle and see if they still connect -->
+<!-- Look in rqt_graph, and unhide leaf topics and sinks -->
+<node name="talker" pkg="test_package" type="talker" output="screen"/>
+<node name="listener" pkg="test_package" type="listener" output="screen"/>
+
+</launch>

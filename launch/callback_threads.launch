@@ -1,0 +1,12 @@
+<launch>
+    <arg name="use_async" default="false"/>
+
+    <!-- Start callback threads node with param to use async or not -->
+    <node name="callback_threads" pkg="test_package" type="callback_threads" output="screen">
+        <param name="use_async" value="$(arg use_async)"/>
+    </node>
+
+    <!-- Publish a message to the trigger topic -->
+    <arg name="msg" value=""/>
+    <node pkg="rostopic" type="rostopic" name="rostopic" args="pub /callback_threads/hot_topic std_msgs/String 'data: $(arg msg)'"/>
+</launch>
